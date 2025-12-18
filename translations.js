@@ -15,11 +15,11 @@ const translations = {
     spanish: "Spanish — A2",
     projects: "Projects",
     projectPortfolioTitle: "Personal Portfolio Website",
-    projectPortfolioDesc: "My personal portfolio showcasing my skills, projects, and experience.",
-    projectGtaTitle: "GTA 6 Website",
-    projectGtaDesc: "An informational website presenting all known details about GTA 6 with a modern, game-inspired design.",
-    projectSchoolTitle: "High School Help Website",
-    projectSchoolDesc: "An educational website designed to help high school students with learning resources.",
+    projectSchoolTitle: "High School Website Assistant",
+    projectGtaTitle: "GTA 6 Introduction Website Project",
+    contact: "Contact",
+    email: "Email",
+    location: "📍Sousse Medina, Tunisia\n✉️ ahmed.websitedev@gmail.com",
     downloadCV: "Download CV"
   },
   fr: {
@@ -38,11 +38,11 @@ const translations = {
     spanish: "Espagnol — A2",
     projects: "Projets",
     projectPortfolioTitle: "Site Portfolio Personnel",
-    projectPortfolioDesc: "Mon portfolio personnel présentant mes compétences, projets et expérience.",
-    projectGtaTitle: "Site GTA 6",
-    projectGtaDesc: "Un site informatif présentant toutes les informations connues sur GTA 6 avec un design moderne inspiré du jeu.",
     projectSchoolTitle: "Site d’Aide pour le Lycée",
-    projectSchoolDesc: "Un site éducatif conçu pour aider les élèves du lycée avec des ressources pédagogiques.",
+    projectGtaTitle: "Site GTA 6",
+    contact: "Contact",
+    email: "Email",
+    location: "📍Sousse Medina, Tunisie\n✉️ ahmed.websitedev@gmail.com",
     downloadCV: "Télécharger le CV"
   },
   ar: {
@@ -61,11 +61,11 @@ const translations = {
     spanish: "الإسبانية — A2",
     projects: "المشاريع",
     projectPortfolioTitle: "موقع السيرة الذاتية",
-    projectPortfolioDesc: "موقعي الشخصي الذي يعرض مهاراتي، مشاريعي وخبرتي.",
-    projectGtaTitle: "موقع GTA 6",
-    projectGtaDesc: "موقع معلوماتي يعرض كل التفاصيل المعروفة عن GTA 6 بتصميم حديث مستوحى من الألعاب.",
     projectSchoolTitle: "موقع مساعدة لطلبة المعاهد",
-    projectSchoolDesc: "موقع تعليمي يهدف إلى مساعدة طلبة المعاهد من خلال موارد تعليمية.",
+    projectGtaTitle: "موقع GTA 6",
+    contact: "التواصل",
+    email: "البريد الإلكتروني",
+    location: "📍سوسة المدينة\n✉️ ahmed.websitedev@gmail.com",
     downloadCV: "تحميل السيرة الذاتية"
   }
 };
@@ -73,9 +73,10 @@ const translations = {
 function setLang(lang) {
   Object.keys(translations[lang]).forEach(key => {
     const el = document.getElementById(key);
-    if (el) el.innerText = translations[lang][key];
+    if (el) el.innerHTML = translations[lang][key].replace(/\n/g,'<br>');
   });
-
   document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
   localStorage.setItem("lang", lang);
 }
+
+setLang(localStorage.getItem("lang") || "en");
