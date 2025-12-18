@@ -33,9 +33,9 @@ body, html {
 }
 
 .header img.profile-img {
-  width: 150px;
-  height: 150px;
-  border-radius: 15px;
+  width: 180px;
+  height: 180px;
+  border-radius: 15px; /* square with rounded corners */
   object-fit: cover;
 }
 
@@ -57,16 +57,18 @@ body, html {
 /* GRID */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
 }
 
 /* CARD */
 .card {
-  background: rgba(0,0,0,0.7);
-  padding: 20px;
-  border-radius: 15px;
-  transition: 0.4s;
+  background: rgba(0,0,0,0.75);
+  padding: 25px;
+  border-radius: 20px;
+  transition: transform 0.4s, box-shadow 0.4s;
+  opacity: 0;
+  transform: translateY(30px);
 }
 
 .card:hover {
@@ -87,23 +89,18 @@ body, html {
 
 .skill-bar {
   width: 100%;
-  height: 10px;
+  height: 12px;
   background: #111;
-  border-radius: 5px;
+  border-radius: 6px;
   overflow: hidden;
 }
 
 .skill-fill {
   height: 100%;
-  background: #00f5ff;
   width: 0;
-  border-radius: 5px;
-  animation: fillSkill 2s forwards;
-}
-
-@keyframes fillSkill {
-  from { width: 0; }
-  to { width: var(--skill-width, 50%); }
+  background: #00f5ff;
+  border-radius: 6px;
+  transition: width 2s;
 }
 
 /* PROJECTS */
@@ -167,6 +164,13 @@ footer {
 
 .lang-switch button:hover {
   background: #00c4ff;
+}
+
+/* FADE IN ANIMATION */
+.fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 1s ease-out;
 }
 
 /* MOBILE */
