@@ -6,7 +6,7 @@ body, html {
   overflow-x: hidden;
   font-family: 'Arial', sans-serif;
   background: black;
-  color: #0f0;
+  color: #00f5ff;
 }
 
 #matrix {
@@ -34,21 +34,23 @@ body, html {
 
 .header img.profile-img {
   width: 150px;
-  border-radius: 50%;
+  height: 150px;
+  border-radius: 15px;
+  object-fit: cover;
 }
 
 .cv-btn {
   padding: 10px 20px;
-  background: #0f0;
+  background: #00f5ff;
   color: black;
   font-weight: bold;
-  border-radius: 25px;
+  border-radius: 15px;
   text-decoration: none;
   transition: 0.3s;
 }
 
 .cv-btn:hover {
-  background: #00ff77;
+  background: #00c4ff;
   transform: translateY(-3px);
 }
 
@@ -69,7 +71,7 @@ body, html {
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 20px #0f0;
+  box-shadow: 0 0 20px #00f5ff;
 }
 
 /* SKILLS */
@@ -86,14 +88,14 @@ body, html {
 .skill-bar {
   width: 100%;
   height: 10px;
-  background: #222;
+  background: #111;
   border-radius: 5px;
   overflow: hidden;
 }
 
 .skill-fill {
   height: 100%;
-  background: #0f0;
+  background: #00f5ff;
   width: 0;
   border-radius: 5px;
   animation: fillSkill 2s forwards;
@@ -114,7 +116,7 @@ body, html {
 }
 
 .project:hover h3 {
-  color: #00ff77;
+  color: #00c4ff;
 }
 
 /* TIMELINE */
@@ -133,7 +135,7 @@ body, html {
 }
 
 .event:hover {
-  background: #0f0;
+  background: #00f5ff;
   color: black;
   transform: translateX(5px);
 }
@@ -155,7 +157,7 @@ footer {
 
 .lang-switch button {
   padding: 5px 10px;
-  background: #0f0;
+  background: #00f5ff;
   color: black;
   border: none;
   border-radius: 5px;
@@ -164,7 +166,7 @@ footer {
 }
 
 .lang-switch button:hover {
-  background: #00ff77;
+  background: #00c4ff;
 }
 
 /* MOBILE */
@@ -176,4 +178,4 @@ footer {
   .grid {
     grid-template-columns: 1fr;
   }
-  }
+}
