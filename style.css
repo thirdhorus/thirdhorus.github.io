@@ -5,17 +5,17 @@ body, html {
   height: 100%;
   overflow-x: hidden;
   font-family: 'Arial', sans-serif;
-  background: black;
-  color: #00f5ff;
+  background: transparent; /* IMPORTANT: no black background */
 }
 
 #matrix {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* behind everything */
+  display: block;
 }
 
 .container {
