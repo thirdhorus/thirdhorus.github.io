@@ -1,37 +1,33 @@
+// FADE IN CARDS & SKILLS ANIMATION
 const faders = document.querySelectorAll('.fade');
-const skillFills = document.querySelectorAll('.skill-fill');
+const skills = document.querySelectorAll('.skill-fill');
 
-const appearOptions = {
+const options = {
   threshold: 0.2
 };
 
 const appearOnScroll = new IntersectionObserver(function(entries, observer) {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
+    if(!entry.isIntersecting) return;
+    entry.target.classList.add('visible');
+    observer.unobserve(entry.target);
+  });
+}, options);
 
-      // Animate skills bars
-      if (entry.target.classList.contains('skills-card')) {
-        skillFills.forEach(skill => {
-          skill.style.width = skill.dataset.skill;
-        });
-      }
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
+});
 
-      observer.unobserve(entry.target);
+// Animate skill bars
+const skillObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      const fill = entry.target.querySelector('.skill-fill');
+      if(fill) fill.style.width = fill.dataset.skill;
     }
   });
-}, appearOptions);
+}, options);
 
-// Immediately show first card(s) on page load
-faders.forEach((fader, index) => {
-  if (index === 0) {
-    fader.classList.add('visible');
-    if (fader.classList.contains('skills-card')) {
-      skillFills.forEach(skill => {
-        skill.style.width = skill.dataset.skill;
-      });
-    }
-  } else {
-    appearOnScroll.observe(fader);
-  }
+document.querySelectorAll('.skill').forEach(skill => {
+  skillObserver.observe(skill);
 });
