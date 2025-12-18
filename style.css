@@ -6,7 +6,7 @@ body, html {
   overflow-x: hidden;
   font-family: 'Arial', sans-serif;
   background: transparent !important; /* matrix visible */
-  color: #00f5ff !important;
+  color: #ffffff !important;
 }
 
 /* MATRIX CANVAS */
