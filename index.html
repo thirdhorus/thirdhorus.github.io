@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -40,7 +40,7 @@
   <div class="grid">
 
     <!-- ABOUT -->
-    <section class="card about-card">
+    <section class="card about-card fade">
       <h2 id="aboutTitle">Profile</h2>
       <p id="aboutText">
         Hi, I’m Ahmed Sghaier<br>
@@ -51,33 +51,33 @@
     </section>
 
     <!-- SKILLS -->
-    <section class="card skills-card">
+    <section class="card skills-card fade">
       <h2 id="skills">Skills</h2>
 
       <div class="skill">
         <span id="frontend">Frontend</span>
         <div class="skill-bar">
-          <div class="skill-fill" style="--skill-width:90%;"></div>
+          <div class="skill-fill" data-skill="90%"></div>
         </div>
       </div>
 
       <div class="skill">
         <span id="tools">Tools</span>
         <div class="skill-bar">
-          <div class="skill-fill" style="--skill-width:85%;"></div>
+          <div class="skill-fill" data-skill="85%"></div>
         </div>
       </div>
 
       <div class="skill">
         <span id="learning">Learning</span>
         <div class="skill-bar">
-          <div class="skill-fill" style="--skill-width:60%;"></div>
+          <div class="skill-fill" data-skill="60%"></div>
         </div>
       </div>
     </section>
 
     <!-- LANGUAGES -->
-    <section class="card languages-card">
+    <section class="card languages-card fade">
       <h2 id="languages">Languages</h2>
       <ul>
         <li id="arabic">Arabic — C2</li>
@@ -88,7 +88,7 @@
     </section>
 
     <!-- PROJECTS -->
-    <section class="card projects-card" id="projectsSection">
+    <section class="card projects-card fade" id="projectsSection">
       <h2 id="projects">Projects</h2>
 
       <div class="project">
@@ -114,15 +114,15 @@
   </div>
 
   <!-- TIMELINE -->
-  <h2 class="timeline-title">Timeline</h2>
-  <div class="timeline">
+  <h2 class="timeline-title fade">Timeline</h2>
+  <div class="timeline fade">
     <div class="event">2022 – Started Computer Science</div>
     <div class="event">2023 – Started Getting Deeper In Web Dev</div>
     <div class="event">2024 – Web Development Expert</div>
     <div class="event">2025 – Portfolio Launch</div>
   </div>
 
-  <footer>
+  <footer class="fade">
     © 2025 Ahmed Sghaier — Computer Science
   </footer>
 
@@ -130,6 +130,7 @@
 
 <script src="translations.js"></script>
 <script src="matrix.js"></script>
+<script src="scroll-animate.js"></script>
 <script>
   setLang(localStorage.getItem('lang') || 'en');
 </script>
