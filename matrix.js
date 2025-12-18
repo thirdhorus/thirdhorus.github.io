@@ -20,11 +20,10 @@ function updateDrops() {
 window.addEventListener('resize', updateDrops);
 
 function draw() {
-  // semi-transparent background to fade previous letters
   ctx.fillStyle = 'rgba(0,0,0,0.05)';
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  ctx.fillStyle = '#00f5ff'; // blue letters
+  ctx.fillStyle = '#00f5ff';
   ctx.font = fontSize + 'px monospace';
 
   for (let i = 0; i < drops.length; i++) {
