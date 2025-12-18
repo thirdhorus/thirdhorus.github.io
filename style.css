@@ -1,12 +1,12 @@
-/* GLOBAL */
+  /* ================= GLOBAL ================= */
 body, html {
   margin: 0;
   padding: 0;
   height: 100%;
   overflow-x: hidden;
   font-family: 'Arial', sans-serif;
-  background: transparent; /* matrix canvas visible */
-  color: #00f5ff; /* main text color */
+  background: transparent !important; /* matrix visible */
+  color: #00f5ff !important; /* force text color */
 }
 
 /* MATRIX CANVAS */
@@ -27,12 +27,17 @@ body, html {
   padding: 20px;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.header h1, .header p {
+  color: #00f5ff !important;
 }
 
 .header img.profile-img {
@@ -42,14 +47,10 @@ body, html {
   object-fit: cover;
 }
 
-.header h1, .header p {
-  color: #00f5ff;
-}
-
 .cv-btn {
   padding: 10px 20px;
   background: #00f5ff;
-  color: black;
+  color: black !important;
   font-weight: bold;
   border-radius: 15px;
   text-decoration: none;
@@ -61,22 +62,22 @@ body, html {
   transform: translateY(-3px);
 }
 
-/* GRID */
+/* ================= GRID ================= */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
 }
 
-/* CARD */
+/* ================= CARDS ================= */
 .card {
   background: rgba(0,0,0,0.75);
-  color: #ffffff;
+  color: #ffffff !important;
   padding: 25px;
   border-radius: 20px;
-  transition: transform 0.4s, box-shadow 0.4s;
   opacity: 0;
   transform: translateY(30px);
+  transition: all 0.4s ease;
 }
 
 .card:hover {
@@ -84,7 +85,7 @@ body, html {
   box-shadow: 0 0 20px #00f5ff;
 }
 
-/* SKILLS */
+/* ================= SKILLS ================= */
 .skill {
   margin-bottom: 15px;
 }
@@ -106,26 +107,26 @@ body, html {
 .skill-fill {
   height: 100%;
   width: 0;
-  background: #00f5ff;
+  background: #00f5ff !important;
   border-radius: 6px;
   transition: width 2s;
 }
 
-/* PROJECTS */
+/* ================= PROJECTS ================= */
 .project {
   margin-bottom: 15px;
 }
 
 .project h3 {
   transition: 0.3s;
-  color: #00f5ff;
+  color: #00f5ff !important;
 }
 
 .project:hover h3 {
-  color: #00c4ff;
+  color: #00c4ff !important;
 }
 
-/* LANGUAGES */
+/* ================= LANGUAGES ================= */
 .languages-card ul {
   list-style: none;
   padding: 0;
@@ -133,9 +134,10 @@ body, html {
 
 .languages-card li {
   margin-bottom: 5px;
+  color: #ffffff !important;
 }
 
-/* TIMELINE */
+/* ================= TIMELINE ================= */
 .timeline {
   margin-top: 20px;
   display: flex;
@@ -148,23 +150,23 @@ body, html {
   padding: 10px;
   border-radius: 10px;
   transition: 0.3s;
-  color: #00f5ff;
+  color: #00f5ff !important;
 }
 
 .event:hover {
   background: #00f5ff;
-  color: black;
+  color: black !important;
   transform: translateX(5px);
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 footer {
   margin-top: 40px;
   text-align: center;
   color: #6b7280;
 }
 
-/* LANGUAGE SWITCH */
+/* ================= LANGUAGE SWITCH ================= */
 .lang-switch {
   display: flex;
   justify-content: flex-end;
@@ -175,7 +177,7 @@ footer {
 .lang-switch button {
   padding: 5px 10px;
   background: #00f5ff;
-  color: black;
+  color: black !important;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -186,14 +188,14 @@ footer {
   background: #00c4ff;
 }
 
-/* FADE IN ANIMATION */
+/* ================= FADE-IN ANIMATION ================= */
 .fade.visible {
-  opacity: 1;
-  transform: translateY(0);
-  transition: all 1s ease-out;
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition: all 1s ease-out !important;
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
