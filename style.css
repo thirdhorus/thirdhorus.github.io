@@ -6,7 +6,7 @@ body, html {
   overflow-x: hidden;
   font-family: 'Arial', sans-serif;
   background: transparent !important; /* matrix visible */
-  color: #ffffff !important; /* force text color */
+  color: #00f5ff !important;
 }
 
 /* MATRIX CANVAS */
@@ -16,7 +16,7 @@ body, html {
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: -1; /* behind everything */
+  z-index: -1;
   display: block;
 }
 
@@ -27,7 +27,7 @@ body, html {
   padding: 20px;
 }
 
-/* ================= HEADER ================= */
+/* HEADER */
 .header {
   display: flex;
   justify-content: space-between;
@@ -41,9 +41,9 @@ body, html {
 }
 
 .header img.profile-img {
-  width: 200px;
-  height: 200px;
-  border-radius: 15px; /* square with rounded corners */
+  width: 220px;
+  height: 220px;
+  border-radius: 15px;
   object-fit: cover;
 }
 
@@ -62,14 +62,14 @@ body, html {
   transform: translateY(-3px);
 }
 
-/* ================= GRID ================= */
+/* GRID */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
 }
 
-/* ================= CARDS ================= */
+/* CARDS */
 .card {
   background: rgba(0,0,0,0.75);
   color: #ffffff !important;
@@ -85,7 +85,7 @@ body, html {
   box-shadow: 0 0 20px #00f5ff;
 }
 
-/* ================= SKILLS ================= */
+/* SKILLS */
 .skill {
   margin-bottom: 15px;
 }
@@ -112,7 +112,7 @@ body, html {
   transition: width 2s;
 }
 
-/* ================= PROJECTS ================= */
+/* PROJECTS */
 .project {
   margin-bottom: 15px;
 }
@@ -126,7 +126,7 @@ body, html {
   color: #00c4ff !important;
 }
 
-/* ================= LANGUAGES ================= */
+/* LANGUAGES */
 .languages-card ul {
   list-style: none;
   padding: 0;
@@ -137,7 +137,7 @@ body, html {
   color: #ffffff !important;
 }
 
-/* ================= TIMELINE ================= */
+/* TIMELINE */
 .timeline {
   margin-top: 20px;
   display: flex;
@@ -159,14 +159,14 @@ body, html {
   transform: translateX(5px);
 }
 
-/* ================= FOOTER ================= */
+/* FOOTER */
 footer {
   margin-top: 40px;
   text-align: center;
   color: #6b7280;
 }
 
-/* ================= LANGUAGE SWITCH ================= */
+/* LANGUAGE SWITCH */
 .lang-switch {
   display: flex;
   justify-content: flex-end;
@@ -188,14 +188,14 @@ footer {
   background: #00c4ff;
 }
 
-/* ================= FADE-IN ANIMATION ================= */
+/* FADE-IN */
 .fade.visible {
   opacity: 1 !important;
   transform: translateY(0) !important;
   transition: all 1s ease-out !important;
 }
 
-/* ================= MOBILE ================= */
+/* MOBILE */
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
@@ -204,4 +204,4 @@ footer {
   .grid {
     grid-template-columns: 1fr;
   }
-  }
+}
