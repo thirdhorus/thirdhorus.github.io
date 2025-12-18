@@ -19,84 +19,109 @@
     <button onclick="setLang('ar')">AR</button>
   </div>
 
-  <!-- HEADER -->
+  <!-- HEADER / HERO -->
   <header class="header">
     <div>
-      <h1>Ahmed<br>Sghaier</h1>
-      <p class="location" id="location">
+      <h1 id="title">Ahmed<br>Sghaier</h1>
+      <p class="location" id="subtitle">
         📍Sousse Medina, Tunisia<br>
         ✉️ ahmed.websitedev@gmail.com
       </p>
-<br>
+      <br>
     </div>
     <div>
       <img src="profile.jpg" alt="Ahmed Sghaier">
     </div>
-<div>
-  <a class="cv-btn" href="Ahmed_Sghaier_CV.pdf" download>⬇ Download CV</a>
-</div>
+    <div>
+      <a class="cv-btn" id="downloadCV" href="Ahmed_Sghaier_CV.pdf" download>⬇ Download CV</a>
+    </div>
   </header>
 
   <!-- GRID -->
   <div class="grid">
 
+    <!-- ABOUT -->
     <section class="card">
       <h2 id="aboutTitle">Profile</h2>
       <p id="aboutText">
         Hi, I’m Ahmed Sghaier<br>
-Web Developer focused on modern, fast, interactive websites<br>
-
-I build responsive websites using HTML, CSS, JavaScript
-and I’m learning advanced frontend frameworks.
+        Web Developer focused on modern, fast, interactive websites<br>
+        I build responsive websites using HTML, CSS, JavaScript
+        and I’m learning advanced frontend frameworks.
       </p>
     </section>
-<section class="card">
-  <h2>Skills</h2>
 
-  <h3>Frontend</h3>
-  <ul>
-    <li>HTML5, CSS3, JavaScript (ES6+)</li>
-    <li>Responsive design (Flexbox, Grid)</li>
-    <li>Animations & transitions</li>
-    <li>Basic SEO</li>
-  </ul>
-
-  <h3>Tools</h3>
-  <ul>
-    <li>Git & GitHub</li>
-    <li>VS Code</li>
-    <li>Figma (basic)</li>
-    <li>GitHub Pages</li>
-  </ul>
-
-  <h3>Learning</h3>
-  <ul>
-    <li>React (in progress)</li>
-    <li>Advanced JavaScript</li>
-  </ul>
-</section>
-
-<section class="card">
-  <h2>Languages</h2>
-  <ul>
-    <li>Arabic — C2</li>
-    <li>English — C2</li>
-    <li>French — B1</li>
-    <li>Spanish — A2</li>
-  </ul>
-  </section>
-
+    <!-- SKILLS -->
     <section class="card">
-      <h2>Projects</h2>
+      <h2 id="skills">Skills</h2>
+
+      <h3 id="frontend">Frontend</h3>
       <ul>
-        <li>Personal Portfolio Website</li>
-        <li>High School Website Assistant</li>
-        <li>GTA 6 Introduction Website Project</li>
-        <li>Designs In several domains [Videos Thumbnails,Posts...]</li>
+        <li>HTML5, CSS3, JavaScript (ES6+)</li>
+        <li>Responsive design (Flexbox, Grid)</li>
+        <li>Animations & transitions</li>
+        <li>Basic SEO</li>
+      </ul>
+
+      <h3 id="tools">Tools</h3>
+      <ul>
+        <li>Git & GitHub</li>
+        <li>VS Code</li>
+        <li>Figma (basic)</li>
+        <li>GitHub Pages</li>
+      </ul>
+
+      <h3 id="learning">Learning</h3>
+      <ul>
+        <li>React (in progress)</li>
+        <li>Advanced JavaScript</li>
       </ul>
     </section>
 
+    <!-- LANGUAGES -->
+    <section class="card">
+      <h2 id="languages">Languages</h2>
+      <ul>
+        <li id="arabic">Arabic — C2</li>
+        <li id="english">English — C2</li>
+        <li id="french">French — B1</li>
+        <li id="spanish">Spanish — A2</li>
+      </ul>
+    </section>
+
+    <!-- PROJECTS -->
+<section class="card" id="projectsSection">
+  <h2 id="projects">Projects</h2>
+
+  <!-- Project 1 -->
+  <div class="project">
+    <h3 id="projectPortfolioTitle">Personal Portfolio Website</h3>
+    <p id="projectPortfolioDesc">
+      My personal portfolio showcasing my skills, projects, and experience.
+    </p>
   </div>
+
+  <!-- Project 2 -->
+  <div class="project">
+    <h3 id="projectSchoolTitle">High School Website Assistant</h3>
+    <p id="projectSchoolDesc">
+      An educational website designed to help high school students with learning resources.
+    </p>
+  </div>
+
+  <!-- Project 3 -->
+  <div class="project">
+    <h3 id="projectGtaTitle">GTA 6 Introduction Website Project</h3>
+    <p id="projectGtaDesc">
+      An informational website presenting all known details about GTA 6 with a modern, game-inspired design.
+    </p>
+  </div>
+
+  <!-- Project 4 (static, no description needed) -->
+  <div class="project">
+    <h3>Designs In several domains [Videos Thumbnails, Posts...]</h3>
+  </div>
+</section>
 
   <!-- TIMELINE -->
   <h2 class="timeline-title">Timeline</h2>
@@ -115,4 +140,4 @@ and I’m learning advanced frontend frameworks.
 
 <script src="script.js"></script>
 </body>
-</html>
+  </html>
