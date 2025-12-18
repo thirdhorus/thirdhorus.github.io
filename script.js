@@ -1,48 +1,127 @@
-/* MATRIX EFFECT */
-const canvas = document.getElementById("matrix");
-const ctx = canvas.getContext("2d");
+/* FULL LANGUAGE TRANSLATIONS */
+const translations = {
+  /* ================= ENGLISH ================= */
+  en: {
+    /* HERO */
+    title: "Hi, I'm Ahmed Sghaier",
+    subtitle: "Web Developer focused on building modern, responsive, and interactive websites.",
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+    /* ABOUT */
+    aboutTitle: "About Me",
+    aboutText: "Motivated computer science student passionate about web development and modern technologies.",
 
-const letters = "01<>/{}[]HTMLCSSJS";
-const fontSize = 14;
-const columns = canvas.width / fontSize;
-const drops = [];
+    /* SKILLS */
+    skills: "Skills",
+    frontend: "Frontend",
+    tools: "Tools",
+    learning: "Currently Learning",
 
-for (let x = 0; x < columns; x++) drops[x] = 1;
+    /* LANGUAGES */
+    languages: "Languages",
+    arabic: "Arabic — C2",
+    english: "English — C2",
+    french: "French — B1",
+    spanish: "Spanish — A2",
 
-function draw() {
-  ctx.fillStyle = "rgba(0,0,0,0.05)";
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
+    /* PROJECTS */
+    projects: "Projects",
+    projectPortfolioTitle: "Personal Portfolio Website",
+    projectPortfolioDesc: "My personal portfolio showcasing my skills, projects, and experience.",
+    projectGtaTitle: "GTA 6 Website",
+    projectGtaDesc: "An informational website presenting all known details about GTA 6 with a modern, game-inspired design.",
+    projectSchoolTitle: "High School Help Website",
+    projectSchoolDesc: "An educational website designed to help high school students with learning resources.",
 
-  ctx.fillStyle = "#38bdf8";
-  ctx.font = fontSize + "px monospace";
+    /* CONTACT */
+    contact: "Contact",
+    email: "Email",
+    downloadCV: "Download CV"
+  },
 
-  for (let i = 0; i < drops.length; i++) {
-    const text = letters[Math.floor(Math.random() * letters.length)];
-    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+  /* ================= FRENCH ================= */
+  fr: {
+    /* HERO */
+    title: "Salut, je suis Ahmed Sghaier",
+    subtitle: "Développeur web spécialisé dans la création de sites modernes, responsives et interactifs.",
 
-    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975)
-      drops[i] = 0;
+    /* ABOUT */
+    aboutTitle: "À propos de moi",
+    aboutText: "Étudiant en informatique motivé, passionné par le développement web et les technologies modernes.",
 
-    drops[i]++;
+    /* SKILLS */
+    skills: "Compétences",
+    frontend: "Frontend",
+    tools: "Outils",
+    learning: "En cours d’apprentissage",
+
+    /* LANGUAGES */
+    languages: "Langues",
+    arabic: "Arabe — C2",
+    english: "Anglais — C2",
+    french: "Français — B1",
+    spanish: "Espagnol — A2",
+
+    /* PROJECTS */
+    projects: "Projets",
+    projectPortfolioTitle: "Site Portfolio Personnel",
+    projectPortfolioDesc: "Mon portfolio personnel présentant mes compétences, projets et expérience.",
+    projectGtaTitle: "Site GTA 6",
+    projectGtaDesc: "Un site informatif présentant toutes les informations connues sur GTA 6 avec un design moderne inspiré du jeu.",
+    projectSchoolTitle: "Site d’Aide pour le Lycée",
+    projectSchoolDesc: "Un site éducatif conçu pour aider les élèves du lycée avec des ressources pédagogiques.",
+
+    /* CONTACT */
+    contact: "Contact",
+    email: "Email",
+    downloadCV: "Télécharger le CV"
+  },
+
+  /* ================= ARABIC ================= */
+  ar: {
+    /* HERO */
+    title: "مرحباً، أنا أحمد الصغيّر",
+    subtitle: "مطوّر ويب أركز على إنشاء مواقع حديثة، متجاوبة وتفاعلية.",
+
+    /* ABOUT */
+    aboutTitle: "نبذة عني",
+    aboutText: "طالب إعلامية طموح وشغوف بتطوير الويب والتقنيات الحديثة.",
+
+    /* SKILLS */
+    skills: "المهارات",
+    frontend: "الواجهة الأمامية",
+    tools: "الأدوات",
+    learning: "أتعلّم حالياً",
+
+    /* LANGUAGES */
+    languages: "اللغات",
+    arabic: "العربية — C2",
+    english: "الإنجليزية — C2",
+    french: "الفرنسية — B1",
+    spanish: "الإسبانية — A2",
+
+    /* PROJECTS */
+    projects: "المشاريع",
+    projectPortfolioTitle: "موقع السيرة الذاتية",
+    projectPortfolioDesc: "موقعي الشخصي الذي يعرض مهاراتي، مشاريعي وخبرتي.",
+    projectGtaTitle: "موقع GTA 6",
+    projectGtaDesc: "موقع معلوماتي يعرض كل التفاصيل المعروفة عن GTA 6 بتصميم حديث مستوحى من الألعاب.",
+    projectSchoolTitle: "موقع مساعدة لطلبة المعاهد",
+    projectSchoolDesc: "موقع تعليمي يهدف إلى مساعدة طلبة المعاهد من خلال موارد تعليمية.",
+
+    /* CONTACT */
+    contact: "التواصل",
+    email: "البريد الإلكتروني",
+    downloadCV: "تحميل السيرة الذاتية"
   }
-}
-setInterval(draw, 33);
-
-/* LANGUAGE SWITCH */
+};
 function setLang(lang) {
-  if (lang === 'fr') {
-    document.getElementById("aboutText").innerText =
-      "Jeune homme motivé passionné par l’informatique et le développement web.";
-  }
-  if (lang === 'ar') {
-    document.getElementById("aboutText").innerText =
-      "طالب إعلامية شغوف بتطوير الويب والتقنيات الحديثة.";
-  }
-  if (lang === 'en') {
-    document.getElementById("aboutText").innerText =
-      "Motivated computer science student passionate about web development and modern technologies.";
-  }
+  Object.keys(translations[lang]).forEach(key => {
+    const el = document.getElementById(key);
+    if (el) el.innerText = translations[lang][key];
+  });
+
+  document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+  localStorage.setItem("lang", lang);
 }
+
+setLang(localStorage.getItem("lang") || "en");
