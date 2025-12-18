@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+      <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -19,65 +19,57 @@
     <button onclick="setLang('ar')">AR</button>
   </div>
 
-  <!-- HEADER / HERO -->
+  <!-- HEADER -->
   <header class="header">
     <div>
-      <h1 id="title">Ahmed<br>Sghaier</h1>
-      <p class="location" id="subtitle">
+      <h1 id="title">Ahmed Sghaier</h1>
+      <p class="location" id="location">
         📍Sousse Medina, Tunisia<br>
         ✉️ ahmed.websitedev@gmail.com
       </p>
+      <a class="cv-btn" id="downloadCV" href="Ahmed_Sghaier_CV.pdf" download>⬇ Download CV</a>
     </div>
     <div>
       <img src="profile.jpg" alt="Ahmed Sghaier" class="profile-img">
-    </div>
-    <div>
-      <a class="cv-btn" id="downloadCV" href="Ahmed_Sghaier_CV.pdf" download>⬇ Download CV</a>
     </div>
   </header>
 
   <!-- GRID -->
   <div class="grid">
 
-    <!-- ABOUT -->
-    <section class="card about-card fade">
-      <h2 id="aboutTitle">Profile</h2>
+    <section class="card fade">
+      <h2 id="aboutTitle">About Me</h2>
       <p id="aboutText">
-        Hi, I’m Ahmed Sghaier<br>
-        Web Developer focused on modern, fast, interactive websites.<br>
-        I build responsive websites using HTML, CSS, JavaScript
-        and I’m learning advanced frontend frameworks.
+        Motivated computer science student passionate about web development and modern technologies.
       </p>
     </section>
 
-    <!-- SKILLS -->
-    <section class="card skills-card fade">
+    <section class="card fade skills-card">
       <h2 id="skills">Skills</h2>
 
       <div class="skill">
-        <span id="frontend">Frontend</span>
+        <span>Frontend</span>
         <div class="skill-bar">
           <div class="skill-fill" data-skill="90%"></div>
         </div>
       </div>
 
       <div class="skill">
-        <span id="tools">Tools</span>
+        <span>Tools</span>
         <div class="skill-bar">
-          <div class="skill-fill" data-skill="85%"></div>
+          <div class="skill-fill" data-skill="80%"></div>
         </div>
       </div>
 
       <div class="skill">
-        <span id="learning">Learning</span>
+        <span>Currently Learning</span>
         <div class="skill-bar">
           <div class="skill-fill" data-skill="60%"></div>
         </div>
       </div>
     </section>
 
-    <!-- LANGUAGES -->
-    <section class="card languages-card fade">
+    <section class="card fade languages-card">
       <h2 id="languages">Languages</h2>
       <ul>
         <li id="arabic">Arabic — C2</li>
@@ -87,28 +79,13 @@
       </ul>
     </section>
 
-    <!-- PROJECTS -->
-    <section class="card projects-card fade" id="projectsSection">
+    <section class="card fade projects-card">
       <h2 id="projects">Projects</h2>
-
-      <div class="project">
-        <h3 id="projectPortfolioTitle">Personal Portfolio Website</h3>
-        <p id="projectPortfolioDesc">My personal portfolio showcasing my skills, projects, and experience.</p>
-      </div>
-
-      <div class="project">
-        <h3 id="projectSchoolTitle">High School Website Assistant</h3>
-        <p id="projectSchoolDesc">An educational website designed to help high school students with learning resources.</p>
-      </div>
-
-      <div class="project">
-        <h3 id="projectGtaTitle">GTA 6 Introduction Website Project</h3>
-        <p id="projectGtaDesc">An informational website presenting all known details about GTA 6 with a modern, game-inspired design.</p>
-      </div>
-
-      <div class="project">
-        <h3>Designs In several domains [Videos Thumbnails, Posts...]</h3>
-      </div>
+      <ul>
+        <li id="projectPortfolioTitle">Personal Portfolio Website</li>
+        <li id="projectSchoolTitle">High School Website Assistant</li>
+        <li id="projectGtaTitle">GTA 6 Introduction Website Project</li>
+      </ul>
     </section>
 
   </div>
@@ -122,17 +99,14 @@
     <div class="event">2025 – Portfolio Launch</div>
   </div>
 
-  <footer class="fade">
+  <footer>
     © 2025 Ahmed Sghaier — Computer Science
   </footer>
 
 </div>
 
-<script src="translations.js"></script>
 <script src="matrix.js"></script>
+<script src="translations.js"></script>
 <script src="scroll-animate.js"></script>
-<script>
-  setLang(localStorage.getItem('lang') || 'en');
-</script>
 </body>
-  </html>
+</html>
