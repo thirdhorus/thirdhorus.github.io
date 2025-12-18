@@ -5,9 +5,11 @@ body, html {
   height: 100%;
   overflow-x: hidden;
   font-family: 'Arial', sans-serif;
-  background: transparent; /* IMPORTANT: no black background */
+  background: transparent; /* matrix canvas visible */
+  color: #00f5ff; /* main text color */
 }
 
+/* MATRIX CANVAS */
 #matrix {
   position: fixed;
   top: 0;
@@ -18,6 +20,7 @@ body, html {
   display: block;
 }
 
+/* CONTAINER */
 .container {
   position: relative;
   z-index: 1;
@@ -33,10 +36,14 @@ body, html {
 }
 
 .header img.profile-img {
-  width: 180px;
-  height: 180px;
+  width: 200px;
+  height: 200px;
   border-radius: 15px; /* square with rounded corners */
   object-fit: cover;
+}
+
+.header h1, .header p {
+  color: #00f5ff;
 }
 
 .cv-btn {
@@ -64,6 +71,7 @@ body, html {
 /* CARD */
 .card {
   background: rgba(0,0,0,0.75);
+  color: #ffffff;
   padding: 25px;
   border-radius: 20px;
   transition: transform 0.4s, box-shadow 0.4s;
@@ -110,10 +118,21 @@ body, html {
 
 .project h3 {
   transition: 0.3s;
+  color: #00f5ff;
 }
 
 .project:hover h3 {
   color: #00c4ff;
+}
+
+/* LANGUAGES */
+.languages-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.languages-card li {
+  margin-bottom: 5px;
 }
 
 /* TIMELINE */
@@ -129,6 +148,7 @@ body, html {
   padding: 10px;
   border-radius: 10px;
   transition: 0.3s;
+  color: #00f5ff;
 }
 
 .event:hover {
@@ -182,4 +202,4 @@ footer {
   .grid {
     grid-template-columns: 1fr;
   }
-}
+  }
