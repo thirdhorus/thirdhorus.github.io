@@ -5,21 +5,33 @@ const appearOptions = {
   threshold: 0.2
 };
 
-const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+const appearOnScroll = new IntersectionObserver(function(entries, observer) {
   entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    entry.target.classList.add('visible');
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
 
-    if (entry.target.classList.contains('skills-card')) {
+      // Animate skills bars
+      if (entry.target.classList.contains('skills-card')) {
+        skillFills.forEach(skill => {
+          skill.style.width = skill.dataset.skill;
+        });
+      }
+
+      observer.unobserve(entry.target);
+    }
+  });
+}, appearOptions);
+
+// Immediately show first card(s) on page load
+faders.forEach((fader, index) => {
+  if (index === 0) {
+    fader.classList.add('visible');
+    if (fader.classList.contains('skills-card')) {
       skillFills.forEach(skill => {
         skill.style.width = skill.dataset.skill;
       });
     }
-
-    appearOnScroll.unobserve(entry.target);
-  });
-}, appearOptions);
-
-faders.forEach(fader => {
-  appearOnScroll.observe(fader);
+  } else {
+    appearOnScroll.observe(fader);
+  }
 });
