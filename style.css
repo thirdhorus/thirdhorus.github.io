@@ -5,7 +5,7 @@
   gap: 15px;
   margin: 10px 0; /* reduced gap to fix spacing */
 }
-
+ 
 .skill img {
   width: 40px;
   transition: transform 0.3s, filter 0.3s;
