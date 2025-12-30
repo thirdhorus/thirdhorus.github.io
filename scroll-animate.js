@@ -11,6 +11,7 @@ const appearOnScroll = new IntersectionObserver((entries, observer) => {
   });
 }, options);
 
+
 faders.forEach(fader => appearOnScroll.observe(fader));
 
 // Animate skill bars with percentage counter
