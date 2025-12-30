@@ -1,6 +1,5 @@
-// FADE IN CARDS & SKILLS ANIMATION
+// FADE IN CARDS
 const faders = document.querySelectorAll('.fade');
-
 const options = { threshold: 0.2 };
 
 const appearOnScroll = new IntersectionObserver((entries, observer) => {
@@ -11,15 +10,14 @@ const appearOnScroll = new IntersectionObserver((entries, observer) => {
   });
 }, options);
 
-
 faders.forEach(fader => appearOnScroll.observe(fader));
 
-// Animate skill bars with percentage counter
+// SKILL BARS + PERCENTAGE
 const countUp = (el, target) => {
   let count = 0;
   const speed = 15;
   const interval = setInterval(() => {
-    if (count >= target) {
+    if(count >= target){
       el.innerText = target + "%";
       clearInterval(interval);
     } else {
@@ -31,19 +29,17 @@ const countUp = (el, target) => {
 
 const skillObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if(entry.isIntersecting) {
+    if(entry.isIntersecting){
       const fill = entry.target.querySelector('.skill-fill');
       const percent = entry.target.querySelector('.percent');
-
-      if(fill && percent) {
+      if(fill && percent){
         const value = parseInt(fill.dataset.skill);
         fill.style.width = value + "%";
         countUp(percent, value);
       }
-
       skillObserver.unobserve(entry.target);
     }
   });
 }, options);
 
-document.querySelectorAll('.skill').forEach(skill => skillObserver.observe(skill));
+document.querySelectorAll('#skills .skill').forEach(skill => skillObserver.observe(skill));
